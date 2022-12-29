@@ -1,0 +1,27 @@
+{
+  "loginTxtUsername": "User name",
+  "loginTxtPassword": "Password",
+  "loginBtnLogin": "Login",
+  "loginWithFingerprint": "Log in with Fingerprint",
+  "loginWithFaceId": "Log in Face ID",
+  "bioSecurityNotEnabled": "Biometric security not enabled, please turn it on",
+  "loginAltEmptyUserNamePassword": "Username and password cannot be null",
+  "loginAlrLoading": "Authenticating",
+  "loadAccessControl": "Loading access control policy",
+  "socketException": "No internet, please try again",
+  "timeoutException": "Time out to process the request",
+  "authorizationException": "Authorization error, please login again",
+  "notFoundException": "Content not found, please come back later",
+  "unsupportedLanguageException": "Language {argument} is not supported",
+  "@unsupportedLanguageException": {
+    "type": "text",
+    "placeholders": {
+      "argument": {}
+    }
+  },
+  "commonException": "Error! An error occurred, please try again later",
+  "noSuchMethodException": "An error occurred while retrieving data",
+  "notFoundPageInStreamChannel": "Not found page in stream",
+  "emptyStreamChannel": "Stream channel can not empty",
+  "cancelRequestException": "Task is canceled"
+}

@@ -1,0 +1,28 @@
+{
+  "loginTxtUsername": "Tên đăng nhập",
+  "loginTxtPassword": "Mật khẩu",
+  "loginBtnLogin": "Đăng nhập",
+  "loginWithFingerprint": "Đăng nhập bằng vân tay",
+  "loginWithFaceId": "Đăng nhập bằng Face ID",
+  "bioSecurityNotEnabled": "Bảo mật sinh trắc học chưa được thiết lập, vui lòng bật",
+  "loginAltEmptyUserNamePassword": "Tên đăng nhập và mật khẩu không được bỏ trống",
+  "loginAlrLoading": "Đang xác thực",
+  "loadAccessControl": "Đang xác thực quyền",
+
+  "socketException": "Không có mạng vui lòng thử lại",
+  "timeoutException": "Quá thời gian xử lý yêu cầu",
+  "authorizationException": "Lỗi xác thực vui lòng đăng nhập lại",
+  "notFoundException": "Không tìm thấy nội dung, vui lòng quay lại sau",
+  "unsupportedLanguageException": "Ngôn ngữ {argument} không được hỗ trợ",
+  "@unsupportedLanguageException": {
+    "type": "text",
+    "placeholders": {
+      "argument": {}
+    }
+  },
+  "commonException": "Đã xảy ra lỗi",
+  "noSuchMethodException": "Đã xảy ra lỗi trong quá trình lấy dữ liệu",
+  "notFoundPageInStreamChannel": "Không tìm thấy trang trong kênh chuyển màn hình",
+  "emptyStreamChannel": "Kênh chuyển màn hình không được bỏ trống",
+  "cancelRequestException": "Thao tác đã dừng lại"
+}
