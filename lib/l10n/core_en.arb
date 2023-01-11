@@ -23,5 +23,20 @@
   "noSuchMethodException": "An error occurred while retrieving data",
   "notFoundPageInStreamChannel": "Not found page in stream",
   "emptyStreamChannel": "Stream channel can not empty",
-  "cancelRequestException": "Task is canceled"
+  "cancelRequestException": "Task is canceled",
+  "biometricAuthLocalizedReason": "Let OS determine authentication method",
+  "biometricHint": "Verify identity",
+  "biometricNotRecognized": "Not recognized. Try again.",
+  "biometricRequiredTitle": "Biometric required",
+  "biometricSuccess": "Success",
+  "biometricOkButton": "OK",
+  "biometricCancelButton": "Cancel",
+  "biometricDeviceCredentialsRequiredTitle": "Device credentials required",
+  "biometricDeviceCredentialsSetupDescription": "Device credentials required",
+  "biometricGoToSettingsButton": "Go to settings",
+  "biometricGoToSettingsDescription": "Biometric authentication is not set up on your device. Go to 'Settings > Security' to add biometric authentication.",
+  "biometricIOSGoToSettingsDescription": "Biometric authentication is not set up on your device. Please either enable Touch ID or Face ID on your phone.",
+  "biometricSignInTitle": "Authentication required",
+  "biometricLockOut": "Biometric authentication is disabled. Please lock and unlock your screen to enable it.",
+  "biometricIOSLocalizedFallbackTitle": ""
 }

@@ -62,4 +62,49 @@ class CoreLocalizationsEn extends CoreLocalizations {
 
   @override
   String get cancelRequestException => 'Task is canceled';
+
+  @override
+  String get biometricAuthLocalizedReason => 'Let OS determine authentication method';
+
+  @override
+  String get biometricHint => 'Verify identity';
+
+  @override
+  String get biometricNotRecognized => 'Not recognized. Try again.';
+
+  @override
+  String get biometricRequiredTitle => 'Biometric required';
+
+  @override
+  String get biometricSuccess => 'Success';
+
+  @override
+  String get biometricOkButton => 'OK';
+
+  @override
+  String get biometricCancelButton => 'Cancel';
+
+  @override
+  String get biometricDeviceCredentialsRequiredTitle => 'Device credentials required';
+
+  @override
+  String get biometricDeviceCredentialsSetupDescription => 'Device credentials required';
+
+  @override
+  String get biometricGoToSettingsButton => 'Go to settings';
+
+  @override
+  String get biometricGoToSettingsDescription => 'Biometric authentication is not set up on your device. Go to \'Settings > Security\' to add biometric authentication.';
+
+  @override
+  String get biometricIOSGoToSettingsDescription => 'Biometric authentication is not set up on your device. Please either enable Touch ID or Face ID on your phone.';
+
+  @override
+  String get biometricSignInTitle => 'Authentication required';
+
+  @override
+  String get biometricLockOut => 'Biometric authentication is disabled. Please lock and unlock your screen to enable it.';
+
+  @override
+  String get biometricIOSLocalizedFallbackTitle => '';
 }

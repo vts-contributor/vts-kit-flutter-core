@@ -206,6 +206,96 @@ abstract class CoreLocalizations {
   /// In en, this message translates to:
   /// **'Task is canceled'**
   String get cancelRequestException;
+
+  /// No description provided for @biometricAuthLocalizedReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Let OS determine authentication method'**
+  String get biometricAuthLocalizedReason;
+
+  /// No description provided for @biometricHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify identity'**
+  String get biometricHint;
+
+  /// No description provided for @biometricNotRecognized.
+  ///
+  /// In en, this message translates to:
+  /// **'Not recognized. Try again.'**
+  String get biometricNotRecognized;
+
+  /// No description provided for @biometricRequiredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric required'**
+  String get biometricRequiredTitle;
+
+  /// No description provided for @biometricSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Success'**
+  String get biometricSuccess;
+
+  /// No description provided for @biometricOkButton.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get biometricOkButton;
+
+  /// No description provided for @biometricCancelButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get biometricCancelButton;
+
+  /// No description provided for @biometricDeviceCredentialsRequiredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Device credentials required'**
+  String get biometricDeviceCredentialsRequiredTitle;
+
+  /// No description provided for @biometricDeviceCredentialsSetupDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Device credentials required'**
+  String get biometricDeviceCredentialsSetupDescription;
+
+  /// No description provided for @biometricGoToSettingsButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to settings'**
+  String get biometricGoToSettingsButton;
+
+  /// No description provided for @biometricGoToSettingsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric authentication is not set up on your device. Go to \'Settings > Security\' to add biometric authentication.'**
+  String get biometricGoToSettingsDescription;
+
+  /// No description provided for @biometricIOSGoToSettingsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric authentication is not set up on your device. Please either enable Touch ID or Face ID on your phone.'**
+  String get biometricIOSGoToSettingsDescription;
+
+  /// No description provided for @biometricSignInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Authentication required'**
+  String get biometricSignInTitle;
+
+  /// No description provided for @biometricLockOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric authentication is disabled. Please lock and unlock your screen to enable it.'**
+  String get biometricLockOut;
+
+  /// No description provided for @biometricIOSLocalizedFallbackTitle.
+  ///
+  /// In en, this message translates to:
+  /// **''**
+  String get biometricIOSLocalizedFallbackTitle;
 }
 
 class _CoreLocalizationsDelegate extends LocalizationsDelegate<CoreLocalizations> {
