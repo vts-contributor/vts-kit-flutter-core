@@ -64,7 +64,7 @@ class CoreLocalizationsVi extends CoreLocalizations {
   String get cancelRequestException => 'Thao tác đã dừng lại';
 
   @override
-  String get biometricAuthLocalizedReason => 'Để OS quyết định cách xác thực';
+  String get biometricAuthLocalizedReason => 'Để hệ điều hành quyết định cách xác thực';
 
   @override
   String get biometricHint => 'Xác nhận danh tính';

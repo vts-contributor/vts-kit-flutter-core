@@ -25,7 +25,7 @@
   "notFoundPageInStreamChannel": "Không tìm thấy trang trong kênh chuyển màn hình",
   "emptyStreamChannel": "Kênh chuyển màn hình không được bỏ trống",
   "cancelRequestException": "Thao tác đã dừng lại",
-  "biometricAuthLocalizedReason": "Để OS quyết định cách xác thực",
+  "biometricAuthLocalizedReason": "Để hệ điều hành quyết định cách xác thực",
   "biometricHint": "Xác nhận danh tính",
   "biometricNotRecognized": "Không nhận ra. Vui lòng thử lại",
   "biometricRequiredTitle": "Yêu cầu sinh trắc học",
