@@ -62,4 +62,49 @@ class CoreLocalizationsVi extends CoreLocalizations {
 
   @override
   String get cancelRequestException => 'Thao tác đã dừng lại';
+
+  @override
+  String get biometricAuthLocalizedReason => 'Để hệ điều hành quyết định cách xác thực';
+
+  @override
+  String get biometricHint => 'Xác nhận danh tính';
+
+  @override
+  String get biometricNotRecognized => 'Không nhận ra. Vui lòng thử lại';
+
+  @override
+  String get biometricRequiredTitle => 'Yêu cầu sinh trắc học';
+
+  @override
+  String get biometricSuccess => 'Thành công';
+
+  @override
+  String get biometricOkButton => 'OK';
+
+  @override
+  String get biometricCancelButton => 'Hủy';
+
+  @override
+  String get biometricDeviceCredentialsRequiredTitle => 'Yêu cầu thông tin thiết bị';
+
+  @override
+  String get biometricDeviceCredentialsSetupDescription => 'Yêu cầu thông tin thiết bị';
+
+  @override
+  String get biometricGoToSettingsButton => 'Vào cài đặt';
+
+  @override
+  String get biometricGoToSettingsDescription => 'Xác thực sinh trắc học không được cài đặt ở thiết bị của bạn. Vào \'Cài đặt > Bảo mật\' để thêm xác thực sinh trắc học';
+
+  @override
+  String get biometricIOSGoToSettingsDescription => 'Xác thực sinh trắc học không được cài đặt ở thiết bị của bạn. Vui lòng bật Touch ID hoặc Face ID trên điện thoại của bạn';
+
+  @override
+  String get biometricSignInTitle => 'Yêu cầu xác thực';
+
+  @override
+  String get biometricLockOut => 'Xác thực sinh trắc học đang bị vô hiệu hóa. Vui lòng khóa và mở khóa màn hình của bạn để bật nó';
+
+  @override
+  String get biometricIOSLocalizedFallbackTitle => '';
 }
