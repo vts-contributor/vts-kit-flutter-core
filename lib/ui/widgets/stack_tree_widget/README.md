@@ -51,11 +51,6 @@ A Stack Tree Widget.
     • All required HTTP hosts are available
 ```
 
-## Run example
--------
-- Run command: `flutter run`.
-- Press on floating button & see how it works.
-
 ## Usage
 -------
 ### Data structure
