@@ -84,3 +84,10 @@ floatingActionButton: FloatingActionButton(
     },
 ),
 ```
+- [ExpandedTreeWidget](expanded_tree_widget.dart): See instruction inside [file](expanded_tree_widget.dart) & see example on [example_show_tree.dart](example/example_show_tree.dart). To run example, modify [main.dart](../../../main.dart): add floating action button, then use function `onShowExpandedTree(context)` to show tree:
+```dart
+floatingActionButton: FloatingActionButton(
+    onPressed: () {
+        onShowExpandedTree(context);
+    },
+),
