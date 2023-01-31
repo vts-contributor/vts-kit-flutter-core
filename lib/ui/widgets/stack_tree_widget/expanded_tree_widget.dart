@@ -168,7 +168,13 @@ class ExpandedTreeWidget<T extends AbsNodeType> {
       TreeType<T> leafTree, BuildContext context, StateSetter setModalState) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      onTap: () {},
+      onTap: () {
+        if (!leafTree.data.isDisabled) {
+          setModalState(
+            () => updateTree(leafTree, !leafTree.data.isChosen!),
+          );
+        }
+      },
       title: Text(leafTree.data.title),
       subtitle:
           leafTree.data.subtitle != null ? Text(leafTree.data.subtitle!) : null,
