@@ -147,6 +147,41 @@ bool updateTree<T extends AbsNodeType>(TreeType<T> tree, bool? chosenValue,
   return true;
 }
 
+/// The tree is single choice, not multiple choice. Only leaf can be chosen.
+bool updateTreeSingleChoice<T extends AbsNodeType>(
+    TreeType<T> tree, bool chosenValue) {
+  /// if `chosenValue == true`, all of its ancestors ancestors must have value
+  /// `isChosen == null` (because we need to customize UI of each inner node if
+  /// one of its children is chosen), others have value `false`.
+  ///
+  /// Otherwise, just update everything - every nodes value to `false`.
+
+  // uncheck all
+  var root = findRoot(tree);
+  uncheckALl(root);
+
+  // if chosen value is true, update all of its ancestors value to null
+  if (chosenValue) {
+    updateAncestorsToNull(tree);
+  } else {}
+
+  // update current node value
+  tree.data.isChosen = chosenValue;
+
+  return true;
+}
+
+TreeType<T> findRoot<T extends AbsNodeType>(TreeType<T> tree) {
+  if (tree.isRoot) return tree;
+  return findRoot(tree.parent!);
+}
+
+bool updateAncestorsToNull<T extends AbsNodeType>(TreeType<T> tree) {
+  tree.data.isChosen = null;
+  if (tree.isRoot) return true;
+  return updateAncestorsToNull(tree.parent!);
+}
+
 // /// This function help find **A TREE**, which contains its whole children
 // TreeType<T>? findTreeWithId<T extends AbsNodeType>(
 //     TreeType<T> tree, dynamic id) {
