@@ -24,5 +24,20 @@
   "noSuchMethodException": "Đã xảy ra lỗi trong quá trình lấy dữ liệu",
   "notFoundPageInStreamChannel": "Không tìm thấy trang trong kênh chuyển màn hình",
   "emptyStreamChannel": "Kênh chuyển màn hình không được bỏ trống",
-  "cancelRequestException": "Thao tác đã dừng lại"
+  "cancelRequestException": "Thao tác đã dừng lại",
+  "biometricAuthLocalizedReason": "Để hệ điều hành quyết định cách xác thực",
+  "biometricHint": "Xác nhận danh tính",
+  "biometricNotRecognized": "Không nhận ra. Vui lòng thử lại",
+  "biometricRequiredTitle": "Yêu cầu sinh trắc học",
+  "biometricSuccess": "Thành công",
+  "biometricOkButton": "OK",
+  "biometricCancelButton": "Hủy",
+  "biometricDeviceCredentialsRequiredTitle": "Yêu cầu thông tin thiết bị",
+  "biometricDeviceCredentialsSetupDescription": "Yêu cầu thông tin thiết bị",
+  "biometricGoToSettingsButton": "Vào cài đặt",
+  "biometricGoToSettingsDescription": "Xác thực sinh trắc học không được cài đặt ở thiết bị của bạn. Vào 'Cài đặt > Bảo mật' để thêm xác thực sinh trắc học",
+  "biometricIOSGoToSettingsDescription": "Xác thực sinh trắc học không được cài đặt ở thiết bị của bạn. Vui lòng bật Touch ID hoặc Face ID trên điện thoại của bạn",
+  "biometricSignInTitle": "Yêu cầu xác thực",
+  "biometricLockOut": "Xác thực sinh trắc học đang bị vô hiệu hóa. Vui lòng khóa và mở khóa màn hình của bạn để bật nó",
+  "biometricIOSLocalizedFallbackTitle": ""
 }
