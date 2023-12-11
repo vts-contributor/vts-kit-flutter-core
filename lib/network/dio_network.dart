@@ -41,6 +41,7 @@ Future<V> post<V extends JsonResponse>(
   String path,
   dynamic body, {
   Map<String, String>? headers,
+  Map<String, dynamic>? params,
   CustomCancelToken? cancelToken,
   InterceptorsWrapper? customInterceptors,
   int sendTimeout = sendTimeout,
@@ -55,6 +56,7 @@ Future<V> post<V extends JsonResponse>(
   final response = await dio.post(
     '$host/$path',
     data: body,
+    queryParameters: params,
     cancelToken: cancelToken,
     options: Options(headers: headers),
   );
@@ -81,10 +83,8 @@ Future<File> download(
 
 Dio prepareDio({required InterceptorsWrapper interceptors}) {
   final dio = Dio()..interceptors.add(interceptors);
-  (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-      (HttpClient client) {
-    client.badCertificateCallback =
-        (X509Certificate cert, String host, int port) => true;
+  (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (HttpClient client) {
+    client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
     return client;
   };
   return dio;
