@@ -373,7 +373,7 @@ function which parse dio Response to [JsonResponse](lib/network/response_json.da
 class.
 
 ```dart
-import 'package:flutter_core/network/dio_network.dart' as dio_network;
+import 'package:flutter_core/network/network.dart' as network;
 
 class ApiService {
   static final String host = 'http://***';
@@ -382,7 +382,7 @@ class ApiService {
       VCRMResponseJson.fromDioResponse(response);
 
   Future<UserInfo> getCurrentUser({CancelToken? cancelToken}) async {
-    final response = await dio_network.get(
+    final response = await network.get(
         host, 'current-user', cancelToken: cancelToken, interceptors, ApiService.jsonParser);
     return UserInfo.fromJson(response.content);
   }

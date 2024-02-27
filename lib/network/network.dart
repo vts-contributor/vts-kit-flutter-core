@@ -6,6 +6,7 @@ import 'package:flutter_core/caches/caches.dart';
 
 import 'api_service.dart';
 import 'custom_cancel_token.dart';
+import 'network_interceptors.dart';
 import 'response_json.dart';
 
 part 'dio_interceptors.dart';
@@ -83,8 +84,10 @@ Future<File> download(
 
 Dio prepareDio({required InterceptorsWrapper interceptors}) {
   final dio = Dio()..interceptors.add(interceptors);
-  (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (HttpClient client) {
-    client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+  (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+      (HttpClient client) {
+    client.badCertificateCallback =
+        (X509Certificate cert, String host, int port) => true;
     return client;
   };
   return dio;

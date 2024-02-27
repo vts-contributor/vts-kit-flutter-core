@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_core/network/custom_cancel_token.dart';
+import 'package:flutter_core/network/network.dart' as network;
 import 'package:flutter_core/network/response_json.dart';
-import 'package:flutter_core/network/dio_network.dart' as dio_network;
 
 abstract class AbstractServerLog {
   static const int sendTimeout = 5000;
@@ -79,7 +79,7 @@ abstract class AbstractServerLog {
       int connectTimeout = connectTimeout,
       Function(Response res)? parser}) async {
     try {
-      final result = await dio_network.get<V>(
+      final result = await network.get<V>(
         host,
         path ?? this.path,
         parser: parser ?? parseJsonFun,
@@ -109,7 +109,7 @@ abstract class AbstractServerLog {
       int connectTimeout = connectTimeout,
       Function(Response res)? parser}) async {
     try {
-      final result = await dio_network.post<V>(
+      final result = await network.post<V>(
         host,
         path ?? this.path,
         body,

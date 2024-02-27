@@ -1,7 +1,7 @@
-part of 'dio_network.dart';
+part of 'network.dart';
 
-InterceptorsWrapper get interceptors =>
-    InterceptorsWrapper(onRequest: onRequestHandle, onError: onErrorHandle);
+NetworkInterceptors get interceptors =>
+    NetworkInterceptors(onRequest: onRequestHandle, onError: onErrorHandle);
 
 void onRequestHandle(
     RequestOptions options, RequestInterceptorHandler handler) {

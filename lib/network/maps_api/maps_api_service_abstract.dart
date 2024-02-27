@@ -4,8 +4,8 @@ import 'package:flutter_core/bases/bases.dart';
 import 'package:flutter_core/extensions/extensions.dart';
 import 'package:flutter_core/models/maps_api/maps_api.dart';
 import 'package:flutter_core/network/custom_cancel_token.dart';
-import 'package:flutter_core/network/dio_network.dart' as dio_network;
 import 'package:flutter_core/network/maps_api/maps_api.dart';
+import 'package:flutter_core/network/network.dart' as network;
 
 abstract class MapsAPIAbstractService {
   @protected
@@ -13,7 +13,8 @@ abstract class MapsAPIAbstractService {
   @protected
   abstract MapsAPIResponseParser jsonParser;
 
-  MapsAPIResponse _parseJsonFun(Response response) => jsonParser.parse(response);
+  MapsAPIResponse _parseJsonFun(Response response) =>
+      jsonParser.parse(response);
 
   @protected
   Future<V> get<V extends MapsAPIResponse>(String path,
@@ -21,9 +22,9 @@ abstract class MapsAPIAbstractService {
       CustomCancelToken? cancelToken,
       Map<String, dynamic>? params,
       InterceptorsWrapper? customInterceptors,
-      int sendTimeout = dio_network.sendTimeout,
-      int receiveTimeout = dio_network.receiveTimeout,
-      int connectTimeout = dio_network.connectTimeout,
+      int sendTimeout = network.sendTimeout,
+      int receiveTimeout = network.receiveTimeout,
+      int connectTimeout = network.connectTimeout,
       Function(Response res)? parser}) async {
     try {
       if (config.key.isNullOrEmpty) {
@@ -35,7 +36,7 @@ abstract class MapsAPIAbstractService {
       } else {
         interceptors = customInterceptors;
       }
-      final result = await dio_network.get<V>(
+      final result = await network.get<V>(
         this.config.hostOf(path),
         path,
         parser: parser ?? _parseJsonFun,
