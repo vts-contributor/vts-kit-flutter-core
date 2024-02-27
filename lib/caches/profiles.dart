@@ -1,9 +1,9 @@
 library caching;
 
 import 'package:flutter_core/extensions/extensions.dart';
+import 'package:flutter_core/models/models.dart';
 import 'package:rxdart/subjects.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_core/models/models.dart';
 
 part 'shared_preferences.dart';
 
@@ -24,14 +24,14 @@ class Profile {
 
   static bool get isLogged => _isLogged ?? false;
 
-  static Future<void> setLoggedIn({saveToDisk: true}) async {
+  static Future<void> setLoggedIn({saveToDisk = true}) async {
     _isLogged = true;
     if (saveToDisk) {
       await _SharedPreferencesCache.saveLogged(true);
     }
   }
 
-  static Future<void> setLoggedOut({saveToDisk: true}) async {
+  static Future<void> setLoggedOut({saveToDisk = true}) async {
     _isLogged = false;
     if (saveToDisk) {
       await _SharedPreferencesCache.saveLogged(true);
@@ -40,7 +40,7 @@ class Profile {
 
   static Token? get token => isLogged ? _token : null;
 
-  static Future<void> setToken(Token token, {saveToDisk: true}) async {
+  static Future<void> setToken(Token token, {saveToDisk = true}) async {
     _token = token;
     if (saveToDisk) {
       await _SharedPreferencesCache.setToken(token);
@@ -50,7 +50,7 @@ class Profile {
   static String? get loggedUsername => isLogged ? _loggedUsername : null;
 
   static Future<void> setLoggedUsername(String username,
-      {saveToDisk: true}) async {
+      {saveToDisk = true}) async {
     _loggedUsername = username;
     if (saveToDisk) {
       await _SharedPreferencesCache.setLoggedUsername(username);
@@ -58,14 +58,13 @@ class Profile {
   }
 
   static Future<int?> getLoggedUserId() async {
-    if(_loggedUserId == null) {
+    if (_loggedUserId == null) {
       _loggedUserId = await _SharedPreferencesCache.getLoggedUserId();
     }
     return _loggedUserId;
   }
 
-  static Future<void> setLoggedUserId(int id,
-      {saveToDisk: true}) async {
+  static Future<void> setLoggedUserId(int id, {saveToDisk = true}) async {
     _loggedUserId = id;
     if (saveToDisk) {
       await _SharedPreferencesCache.setLoggedUserId(id);
@@ -74,7 +73,7 @@ class Profile {
 
   static bool get useBiometric => _useBiometric ?? true;
 
-  static Future<void> setUseBiometric(bool use, {saveToDisk: true}) async {
+  static Future<void> setUseBiometric(bool use, {saveToDisk = true}) async {
     _useBiometric = use;
     if (saveToDisk) {
       await _SharedPreferencesCache.setUseBiometric(use);
@@ -90,7 +89,7 @@ class Profile {
 
   static bool isVisibleWidget(String route, String key, {defaultValue = true}) {
     return _widgetVisibility?.isVisible(route, key,
-        defaultValue: defaultValue) ??
+            defaultValue: defaultValue) ??
         defaultValue;
   }
 

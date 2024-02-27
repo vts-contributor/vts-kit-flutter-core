@@ -14,7 +14,7 @@ class CoreLatLng {
   ///
   /// The [lng] from -180.0 to +180.0.
   CoreLatLng(double lat, double lng,
-      {bool receiveNow: false, this.isDefault: false}) {
+      {bool receiveNow = false, this.isDefault = false}) {
     if (-90 > lat || lat > 90 || -180 > lng || lng > 180) {
       isValid = false;
       this.lat = 0.0;
@@ -42,9 +42,10 @@ class CoreLatLng {
   /// The [lat] from -90.0 to +90.0.
   ///
   /// The [lng] from -180.0 to +180.0.
-  factory CoreLatLng.fromMap(Map latLngMap, {bool receiveNow: false}) {
+  factory CoreLatLng.fromMap(Map latLngMap, {bool receiveNow = false}) {
     try {
-      return CoreLatLng(latLngMap['lat'], latLngMap['lng'], receiveNow: receiveNow);
+      return CoreLatLng(latLngMap['lat'], latLngMap['lng'],
+          receiveNow: receiveNow);
     } catch (err) {
       print('Parse CoreLatLng from Map $latLngMap failed because $err');
       return CoreLatLng.defaultInvalid();
@@ -57,7 +58,7 @@ class CoreLatLng {
   }
 
   factory CoreLatLng.fromGoogleLatLng(Google.LatLng latLng,
-      {bool receiveNow: false}) =>
+          {bool receiveNow = false}) =>
       CoreLatLng(latLng.latitude, latLng.longitude, receiveNow: receiveNow);
 
   // factory CoreLatLng.fromViettelLatLng(Viettel.LatLng latLng,

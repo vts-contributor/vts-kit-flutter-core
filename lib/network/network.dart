@@ -1,12 +1,14 @@
 import 'dart:io';
 
 import 'package:dio/adapter.dart';
-import 'package:dio/dio.dart';
+import 'package:dio/dio.dart' as dio_pkg;
 import 'package:flutter_core/caches/caches.dart';
+import 'package:flutter_core/network/progress_callback.dart';
+import 'package:flutter_core/network/response.dart';
 
 import 'api_service.dart';
 import 'custom_cancel_token.dart';
-import 'network_interceptors.dart';
+import 'interceptors.dart' as interceptor;
 import 'response_json.dart';
 
 part 'dio_interceptors.dart';
@@ -19,7 +21,7 @@ Future<V> get<V extends JsonResponse>(String host, String path,
     {Map<String, String>? headers,
     CustomCancelToken? cancelToken,
     Map<String, dynamic>? params,
-    InterceptorsWrapper? customInterceptors,
+    interceptor.Interceptors? customInterceptors,
     int sendTimeout = sendTimeout,
     int receiveTimeout = receiveTimeout,
     int connectTimeout = connectTimeout,
@@ -32,9 +34,9 @@ Future<V> get<V extends JsonResponse>(String host, String path,
     '$host/$path',
     queryParameters: params,
     cancelToken: cancelToken,
-    options: Options(headers: headers),
+    options: dio_pkg.Options(headers: headers),
   );
-  return parser(response);
+  return parser(Response.fromDio(response));
 }
 
 Future<V> post<V extends JsonResponse>(
@@ -44,7 +46,7 @@ Future<V> post<V extends JsonResponse>(
   Map<String, String>? headers,
   Map<String, dynamic>? params,
   CustomCancelToken? cancelToken,
-  InterceptorsWrapper? customInterceptors,
+  interceptor.Interceptors? customInterceptors,
   int sendTimeout = sendTimeout,
   int receiveTimeout = receiveTimeout,
   int connectTimeout = connectTimeout,
@@ -59,9 +61,9 @@ Future<V> post<V extends JsonResponse>(
     data: body,
     queryParameters: params,
     cancelToken: cancelToken,
-    options: Options(headers: headers),
+    options: dio_pkg.Options(headers: headers),
   );
-  return parser(response);
+  return parser(Response.fromDio(response));
 }
 
 Future<File> download(
@@ -69,7 +71,7 @@ Future<File> download(
   String savePath, {
   CustomCancelToken? cancelToken,
   ProgressCallback? onReceiveProgress,
-  InterceptorsWrapper? customInterceptors,
+  interceptor.Interceptors? customInterceptors,
 }) async {
   final dio = prepareDio(interceptors: customInterceptors ?? interceptors);
   await dio.download(
@@ -82,8 +84,8 @@ Future<File> download(
   return file;
 }
 
-Dio prepareDio({required InterceptorsWrapper interceptors}) {
-  final dio = Dio()..interceptors.add(interceptors);
+dio_pkg.Dio prepareDio({required interceptor.Interceptors interceptors}) {
+  final dio = dio_pkg.Dio()..interceptors.add(interceptors);
   (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
       (HttpClient client) {
     client.badCertificateCallback =

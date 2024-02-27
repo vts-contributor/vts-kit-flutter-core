@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
-class NetworkInterceptors extends InterceptorsWrapper {
-  NetworkInterceptors({
+class Interceptors extends InterceptorsWrapper {
+  Interceptors({
     InterceptorSendCallback? onRequest,
     InterceptorSuccessCallback? onResponse,
     InterceptorErrorCallback? onError,

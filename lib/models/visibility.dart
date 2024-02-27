@@ -1,12 +1,12 @@
 import 'package:flutter_core/models/abstract.dart';
 
-class WidgetVisibility extends AbstractModel{
+class WidgetVisibility extends AbstractModel {
   final Map<String, dynamic> _map;
 
   WidgetVisibility(this._map);
 
   static WidgetVisibility fromJson(Map<String, dynamic>? json,
-      {String rootKey: 'controls'}) {
+      {String rootKey = 'controls'}) {
     var map = json?[rootKey] as Map<String, dynamic>;
     return WidgetVisibility(map);
   }

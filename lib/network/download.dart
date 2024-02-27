@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dio/dio.dart';
+import 'package:flutter_core/network/progress_callback.dart';
 
 import 'custom_cancel_token.dart';
 import 'network.dart' as network;

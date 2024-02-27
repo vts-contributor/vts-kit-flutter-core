@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_core/extensions/extensions.dart';
 import 'package:flutter_core/localizations/generated/core.dart';
 import 'package:flutter_core/plugins/app_bar_data.dart';
 import 'package:flutter_core/plugins/plugins.dart';
-import 'package:flutter_core/extensions/extensions.dart';
 import 'package:rxdart/subjects.dart';
+
 import 'screen.dart';
 
 class FragmentManager {
@@ -29,7 +30,7 @@ class FragmentManager {
   PluginScreen replaceLast(
       {required String channel,
       required PluginScreen screen,
-      notifyChange: true}) {
+      notifyChange = true}) {
     _screenMap[channel]?.takeIf((it) => it.isNotEmpty)?.removeLast();
     return add(channel: channel, screen: screen, notifyChange: notifyChange);
   }
@@ -37,7 +38,7 @@ class FragmentManager {
   PluginScreen replaceAll(
       {required String channel,
       required PluginScreen screen,
-      notifyChange: true}) {
+      notifyChange = true}) {
     _screenMap[channel]?.takeIf((it) => it.isNotEmpty)?.clear();
     return add(channel: channel, screen: screen, notifyChange: notifyChange);
   }
@@ -45,7 +46,7 @@ class FragmentManager {
   PluginScreen add(
       {required String channel,
       required PluginScreen screen,
-      notifyChange: true}) {
+      notifyChange = true}) {
     if (_screenMap[channel] == null) {
       _screenMap[channel] = [];
     }
@@ -109,7 +110,7 @@ class _Fragment {
   final PluginScreen screen;
   final notifyChange;
 
-  _Fragment(this.channel, this.screen, {this.notifyChange: true});
+  _Fragment(this.channel, this.screen, {this.notifyChange = true});
 }
 
 class FragmentStream extends StreamBuilder<PluginScreen> {

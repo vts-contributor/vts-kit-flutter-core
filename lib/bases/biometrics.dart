@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_core/localizations/generated/core.dart';
-import 'package:local_auth/auth_strings.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:local_auth_android/local_auth_android.dart';
+import 'package:local_auth_ios/local_auth_ios.dart';
+
 import 'exceptions.dart';
 
 class BiometricAuth {
@@ -35,8 +37,8 @@ class BiometricAuth {
     bool authenticated = false;
 
     CoreLocalizations? l10n;
-    AndroidAuthMessages? androidAuthMessages;
-    IOSAuthMessages? iosAuthMessages;
+    late AndroidAuthMessages androidAuthMessages;
+    late IOSAuthMessages iosAuthMessages;
     if (context != null) {
       l10n = CoreLocalizations.of(context);
       if (l10n != null) {
@@ -46,8 +48,10 @@ class BiometricAuth {
           biometricRequiredTitle: l10n.biometricRequiredTitle,
           biometricSuccess: l10n.biometricSuccess,
           cancelButton: l10n.biometricCancelButton,
-          deviceCredentialsRequiredTitle: l10n.biometricDeviceCredentialsRequiredTitle,
-          deviceCredentialsSetupDescription: l10n.biometricDeviceCredentialsSetupDescription,
+          deviceCredentialsRequiredTitle:
+              l10n.biometricDeviceCredentialsRequiredTitle,
+          deviceCredentialsSetupDescription:
+              l10n.biometricDeviceCredentialsSetupDescription,
           goToSettingsButton: l10n.biometricGoToSettingsButton,
           goToSettingsDescription: l10n.biometricGoToSettingsDescription,
           signInTitle: l10n.biometricSignInTitle,
@@ -64,12 +68,15 @@ class BiometricAuth {
 
     try {
       authenticated = await auth.authenticate(
-          localizedReason: l10n?.biometricAuthLocalizedReason ?? 'Let OS determine authentication method',
-          iOSAuthStrings: iosAuthMessages ?? const IOSAuthMessages(),
-          androidAuthStrings: androidAuthMessages ?? const AndroidAuthMessages(),
+        localizedReason: l10n?.biometricAuthLocalizedReason ??
+            'Let OS determine authentication method',
+        authMessages: <AuthMessages>[androidAuthMessages, iosAuthMessages],
+        options: AuthenticationOptions(
           useErrorDialogs: true,
           biometricOnly: true,
-          stickyAuth: true);
+          stickyAuth: true,
+        ),
+      );
     } on PlatformException {
       throw NotEnabledBioSecurityException('');
     }

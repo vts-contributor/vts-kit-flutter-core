@@ -8,10 +8,10 @@ class Media {
 
   factory Media.fromJson(
     Map<String, dynamic>? json, {
-    String idKey: 'id',
-    String typeKey: 'type',
-    String thumbnailKey: 'thumbnail_url',
-    String urlKey: 'url',
+    String idKey = 'id',
+    String typeKey = 'type',
+    String thumbnailKey = 'thumbnail_url',
+    String urlKey = 'url',
   }) {
     final String id = json?[idKey] ?? '';
     final String? type = json?[typeKey];

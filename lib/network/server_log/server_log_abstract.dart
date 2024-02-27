@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_core/network/custom_cancel_token.dart';
+import 'package:flutter_core/network/interceptors.dart' as interceptor;
 import 'package:flutter_core/network/network.dart' as network;
 import 'package:flutter_core/network/response_json.dart';
 
@@ -26,7 +27,7 @@ abstract class AbstractServerLog {
       JsonResponse(content: {'response': response});
 
   @protected
-  final InterceptorsWrapper interceptors = InterceptorsWrapper();
+  final interceptor.Interceptors interceptors = interceptor.Interceptors();
 
   Future<void> sendLog(
     Map<String, dynamic> log, {
