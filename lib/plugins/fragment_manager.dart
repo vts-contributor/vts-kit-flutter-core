@@ -168,11 +168,17 @@ class FragmentStream extends StreamBuilder<PluginScreen> {
                   child = Container();
               }
             }
-            return WillPopScope(
-              onWillPop: onWillPop ??
-                  () async {
-                    return !FragmentManager.instance.back(channel: channel);
-                  },
+            return PopScope(
+              canPop: false,
+              onPopInvokedWithResult: (didPop, result) async {
+                if (didPop) return;
+                final bool shouldPop = onWillPop != null
+                    ? await onWillPop()
+                    : !FragmentManager.instance.back(channel: channel);
+                if (shouldPop && context.mounted) {
+                  Navigator.of(context).pop(result);
+                }
+              },
               child: widgetBuilder?.call(context, child) ?? child,
             );
           },

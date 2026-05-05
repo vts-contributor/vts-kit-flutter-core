@@ -1,5 +1,7 @@
 import 'core.dart';
 
+// ignore_for_file: type=lint
+
 /// The translations for Vietnamese (`vi`).
 class CoreLocalizationsVi extends CoreLocalizations {
   CoreLocalizationsVi([String locale = 'vi']) : super(locale);
