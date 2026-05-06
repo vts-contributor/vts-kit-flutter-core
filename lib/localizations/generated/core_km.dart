@@ -1,5 +1,7 @@
 import 'core.dart';
 
+// ignore_for_file: type=lint
+
 /// The translations for Khmer Central Khmer (`km`).
 class CoreLocalizationsKm extends CoreLocalizations {
   CoreLocalizationsKm([String locale = 'km']) : super(locale);

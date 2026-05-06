@@ -48,3 +48,6 @@ app.*.symbols
 app.*.map.json
 /.gradle
 /local.properties
+
+# FVM Version Cache
+.fvm/

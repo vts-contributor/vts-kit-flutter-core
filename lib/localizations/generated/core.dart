@@ -9,6 +9,8 @@ import 'core_en.dart';
 import 'core_km.dart';
 import 'core_vi.dart';
 
+// ignore_for_file: type=lint
+
 /// Callers can lookup localized strings with an instance of CoreLocalizations
 /// returned by `CoreLocalizations.of(context)`.
 ///

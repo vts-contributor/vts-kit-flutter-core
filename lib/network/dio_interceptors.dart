@@ -14,7 +14,7 @@ void onRequestHandle(
 }
 
 void onErrorHandle(
-    dio_pkg.DioError error, dio_pkg.ErrorInterceptorHandler handler) async {
+    dio_pkg.DioException error, dio_pkg.ErrorInterceptorHandler handler) async {
   final response = error.response;
   if (response?.statusCode == 403) {
     final requestOptions = response?.requestOptions;
