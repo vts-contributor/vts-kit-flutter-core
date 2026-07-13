@@ -30,7 +30,7 @@ dependencies:
   http: ^1.2.0
   google_maps_flutter: ^2.6.0
   #vtmap_gl: ^1.1.13
-  dio: ^5.5.0
+  dio: ^5.10.0
   rxdart: ^0.28.0
   get: ^4.6.6
   device_info_plus: ^10.1.0

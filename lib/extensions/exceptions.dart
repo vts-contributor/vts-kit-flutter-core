@@ -20,6 +20,7 @@ extension MultiLanguageException on Exception {
         final DioException dioError = this as DioException;
         switch (dioError.type) {
           case DioExceptionType.connectionTimeout:
+          case DioExceptionType.transformTimeout:
           case DioExceptionType.receiveTimeout:
           case DioExceptionType.badCertificate:
           case DioExceptionType.connectionError:
