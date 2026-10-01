@@ -7,6 +7,7 @@ import 'package:intl/intl.dart' as intl;
 
 import 'core_en.dart';
 import 'core_km.dart';
+import 'core_my.dart';
 import 'core_vi.dart';
 
 // ignore_for_file: type=lint
@@ -94,6 +95,7 @@ abstract class CoreLocalizations {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
     Locale('km'),
+    Locale('my'),
     Locale('vi')
   ];
 
@@ -311,7 +313,7 @@ class _CoreLocalizationsDelegate extends LocalizationsDelegate<CoreLocalizations
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'km', 'vi'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'km', 'my', 'vi'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_CoreLocalizationsDelegate old) => false;
@@ -324,6 +326,7 @@ CoreLocalizations lookupCoreLocalizations(Locale locale) {
   switch (locale.languageCode) {
     case 'en': return CoreLocalizationsEn();
     case 'km': return CoreLocalizationsKm();
+    case 'my': return CoreLocalizationsMy();
     case 'vi': return CoreLocalizationsVi();
   }
 
